@@ -1,6 +1,7 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using SmartEnergy.Services.Consumptions.SeClientrver.Api.Configuration;
 
-app.MapGet("/", () => "Hello World!");
+var builder = WebApplication.CreateBuilder(args);
+
+var app = builder.ConfigureServices().ConfigurePipeline();
 
 app.Run();
