@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package SmartEnergy.BuildingBlocks.Contracts.Protos;
+
+service GetConsumptionsGrpcService {
+  rpc Handle (GetConsumptionsGrpcRequest) returns (stream GetConsumptionsGrpcResponse);
+}
+
+message GetConsumptionsGrpcRequest {
+  int32 skip = 1;
+  int32 take = 2;
+}
+
+message GetConsumptionsGrpcResponse {
+  string time = 1;
+  string meterUsage = 2;
+}
+
