@@ -64,3 +64,4 @@ I just ignored the following items to keep it simple:
 - Logging
 - Exception handlenig
 - UI/UX for dashboard
+- Cause of internet issue, acceptance tests and docker compose is not tested yet
