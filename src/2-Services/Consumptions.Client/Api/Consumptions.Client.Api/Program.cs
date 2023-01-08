@@ -1,4 +1,4 @@
-using SmartEnergy.Services.Consumptions.SeClientrver.Api.Configuration;
+using SmartEnergy.Services.Consumptions.Client.Api.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 

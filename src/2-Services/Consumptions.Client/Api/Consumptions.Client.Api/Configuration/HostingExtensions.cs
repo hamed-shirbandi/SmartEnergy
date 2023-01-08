@@ -1,9 +1,9 @@
 using MediatR;
-using SmartEnergy.Services.Consumptions.Client.Api.Configuration;
+using SmartEnergy.Services.Consumptions.Client.Api.Features.GetConsumptions;
 using SmartEnergy.Services.Consumptions.Client.Api.Infrastructure.Behaviors;
 using SmartEnergy.Services.Consumptions.Client.Api.Infrastructure.Mapper;
 
-namespace SmartEnergy.Services.Consumptions.SeClientrver.Api.Configuration
+namespace SmartEnergy.Services.Consumptions.Client.Api.Configuration
 {
     internal static class HostingExtensions
     {
@@ -20,7 +20,7 @@ namespace SmartEnergy.Services.Consumptions.SeClientrver.Api.Configuration
 
             builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-            builder.Services.AddMediatR(typeof(Program));
+            builder.Services.AddMediatR(typeof(GetConsumptionsHandler));
 
             builder.Services.AddCachingBehavior();
 
@@ -43,7 +43,7 @@ namespace SmartEnergy.Services.Consumptions.SeClientrver.Api.Configuration
                 .AllowAnyMethod()
                 .AllowAnyHeader());
 
-            app.MapGet("/", () => "Hello from Consumptions.Client.Api!");
+            app.MapGet("/", () => "Hello from Consumptions.Client.Api! \n\n Try this to skip 0 and take 4 records: https://localhost:6003/consumptions/0/4");
 
             app.UseEndpoints(endpoints =>
             {
