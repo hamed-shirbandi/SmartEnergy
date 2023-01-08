@@ -25,11 +25,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\1-BuildingBlocks\Contracts\Contracts.csproj" />
+	  <ProjectReference Include="..\..\..\..\1-BuildingBlocks\Contracts\Contracts.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Protobuf Include="..\..\1-BuildingBlocks\Contracts\Protos\get_consumptions.proto" GrpcServices="Server" />
+		<Protobuf Include="..\..\..\..\1-BuildingBlocks\Contracts\Protos\get_consumptions.proto" GrpcServices="Server" />
 	</ItemGroup>
 
 </Project>
