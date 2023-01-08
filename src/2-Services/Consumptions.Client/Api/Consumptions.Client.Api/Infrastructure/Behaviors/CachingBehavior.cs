@@ -48,7 +48,10 @@ namespace SmartEnergy.Services.Consumptions.Client.Api.Infrastructure.Behaviors
 
             var response = await next();
 
+            //better way is to calculate the time from now to the next quarter
+            //for example if now time is 01:02:00 then cache time should be 13 min
             var cacheTimeInMinutes = int.Parse(_configuration["Caching:CacheTimeInMinutes"]);
+
             var expirationTime = DateTime.Now.AddMinutes(cacheTimeInMinutes);
             await _cachingProvider.SetAsync(cacheKey, response, expirationTime.TimeOfDay);
 
