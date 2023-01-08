@@ -1,4 +1,5 @@
 using MediatR;
+using SmartEnergy.Services.Consumptions.Server.Api.Features.GetConsumptions;
 using SmartEnergy.Services.Consumptions.Server.Api.Infrastructure.Mapper;
 using SmartEnergy.Services.Consumptions.Server.Api.Infrastructure.Repositories;
 
@@ -15,7 +16,7 @@ namespace SmartEnergy.Services.Consumptions.Server.Api.Configuration
         {
             builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-            builder.Services.AddMediatR(typeof(Program));
+            builder.Services.AddMediatR(typeof(GetConsumptionsHandler));
 
             builder.Services.AddRepositories();
 
