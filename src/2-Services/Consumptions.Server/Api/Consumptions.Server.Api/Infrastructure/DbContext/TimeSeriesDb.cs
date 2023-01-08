@@ -21,7 +21,7 @@ namespace SmartEnergy.Services.Consumptions.Server.Api.Infrastructure.DbContext
         /// </summary>
         private static IEnumerable<Consumption> GetConsumptionsFromTextFile()
         {
-            string consumptionJsonText = File.ReadAllText(@"./Infrastructure/DB/meterusage.json");
+            string consumptionJsonText = File.ReadAllText(@"./Infrastructure/DbContext/meterusage.json");
             return JsonSerializer.Deserialize<IEnumerable<Consumption>>(consumptionJsonText);
         }
     }
