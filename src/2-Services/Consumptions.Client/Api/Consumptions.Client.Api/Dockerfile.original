@@ -8,7 +8,6 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["src/2-Services/Consumptions.Client/Api/Consumptions.Client.Api/Consumptions.Client.Api.csproj", "src/2-Services/Consumptions.Client/Api/Consumptions.Client.Api/"]
-COPY ["src/1-BuildingBlocks/Contracts/Contracts.csproj", "src/1-BuildingBlocks/Contracts/"]
 RUN dotnet restore "src/2-Services/Consumptions.Client/Api/Consumptions.Client.Api/Consumptions.Client.Api.csproj"
 COPY . .
 WORKDIR "/src/src/2-Services/Consumptions.Client/Api/Consumptions.Client.Api"
@@ -20,4 +19,4 @@ RUN dotnet publish "Consumptions.Client.Api.csproj" -c Release -o /app/publish /
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "SmartEnergy.Services.Consumptions.Client.Api.dll"]
+ENTRYPOINT ["dotnet", "Consumptions.Client.Api.dll"]

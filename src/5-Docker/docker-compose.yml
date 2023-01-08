@@ -1,0 +1,42 @@
+version: '3.4'
+
+services:
+  consumptions-server:
+    container_name: consumptions-server
+    image: ${DOCKER_REGISTRY-}consumptions-server
+    restart: on-failure
+    build:
+      context: ../..
+      dockerfile: src/2-Services/Consumptions.Server/Dockerfile
+    networks:
+      - smartenergy-network
+
+  consumptions-client:
+    container_name: consumptions-client
+    image: ${DOCKER_REGISTRY-}consumptions-client
+    build:
+      context: ../..
+      dockerfile: src/2-Services/Consumptions.Client/Dockerfile
+    ports:
+      - "6002:80"
+      - "6003:443"
+    depends_on:
+      - consumptions-server
+    networks:
+      - smartenergy-network
+
+  dashboard:
+    container_name: dashboard
+    image: ${DOCKER_REGISTRY-}dashboard
+    build:
+      context: ../..
+      dockerfile: src/3-Clients/Dashboard/Dockerfile
+    ports:
+      - "6004:80"
+      - "6005:443"
+    depends_on:
+      - consumptions-client
+
+networks:
+  smartenergy-network:
+

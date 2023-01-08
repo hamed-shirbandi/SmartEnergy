@@ -5,6 +5,8 @@
 	  <ImplicitUsings>enable</ImplicitUsings>
 	  <AssemblyName>SmartEnergy.Clients.Dashboard</AssemblyName>
 	  <RootNamespace>SmartEnergy.Clients.Dashboard</RootNamespace>
+	  <DockerComposeProjectPath>..\..\5-Docker\docker-compose.dcproj</DockerComposeProjectPath>
+	  <UserSecretsId>fbfba560-a604-4706-a769-17a9738b7185</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

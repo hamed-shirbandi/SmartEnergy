@@ -1,14 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-	  <ImplicitUsings>enable</ImplicitUsings>
-	  <AssemblyName>SmartEnergy.Services.Consumptions.Server.Api</AssemblyName>
-	  <RootNamespace>SmartEnergy.Services.Consumptions.Server.Api</RootNamespace>
-    <UserSecretsId>f9c0aea3-8b4f-4194-9dc3-4ad39130c2d7</UserSecretsId>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <DockerfileContext>..\..\..\..\..</DockerfileContext>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AssemblyName>SmartEnergy.Services.Consumptions.Server.Api</AssemblyName>
+		<RootNamespace>SmartEnergy.Services.Consumptions.Server.Api</RootNamespace>
+		<UserSecretsId>f9c0aea3-8b4f-4194-9dc3-4ad39130c2d7</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>..\..\..\..\..</DockerfileContext>
+		<DockerComposeProjectPath>..\..\..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
@@ -25,7 +26,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\..\..\1-BuildingBlocks\Contracts\Contracts.csproj" />
+		<ProjectReference Include="..\..\..\..\1-BuildingBlocks\Contracts\Contracts.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
