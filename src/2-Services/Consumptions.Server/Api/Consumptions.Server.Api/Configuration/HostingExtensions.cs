@@ -1,5 +1,6 @@
 using MediatR;
 using SmartEnergy.Services.Consumptions.Server.Api.Features.GetConsumptions;
+using SmartEnergy.Services.Consumptions.Server.Api.Infrastructure.DI;
 using SmartEnergy.Services.Consumptions.Server.Api.Infrastructure.Mapper;
 using SmartEnergy.Services.Consumptions.Server.Api.Infrastructure.Repositories;
 
@@ -14,11 +15,7 @@ namespace SmartEnergy.Services.Consumptions.Server.Api.Configuration
         /// </summary>
         public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
         {
-            builder.Services.AddAutoMapper(typeof(MappingProfile));
-
-            builder.Services.AddMediatR(typeof(GetConsumptionsHandler));
-
-            builder.Services.AddRepositories();
+            builder.Services.AddModules();
 
             builder.Services.AddGrpc();
 
@@ -46,12 +43,5 @@ namespace SmartEnergy.Services.Consumptions.Server.Api.Configuration
 
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private static void AddRepositories(this IServiceCollection services)
-        {
-            services.AddScoped<ConsumptionReqpository>();
-        }
     }
 }
