@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -8,73 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\css\app.css" />
-    <Content Remove="wwwroot\css\bootstrap\bootstrap.min.css" />
-    <Content Remove="wwwroot\css\bootstrap\bootstrap.min.css.map" />
-    <Content Remove="wwwroot\css\open-iconic\FONT-LICENSE" />
-    <Content Remove="wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css" />
-    <Content Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.eot" />
-    <Content Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.otf" />
-    <Content Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.svg" />
-    <Content Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.ttf" />
-    <Content Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.woff" />
-    <Content Remove="wwwroot\css\open-iconic\ICON-LICENSE" />
-    <Content Remove="wwwroot\css\open-iconic\README.md" />
-    <Content Remove="wwwroot\favicon.ico" />
-    <Content Remove="wwwroot\icon-192.png" />
-    <Content Remove="wwwroot\index.html" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\css\app.css" />
-    <None Include="wwwroot\css\bootstrap\bootstrap.min.css" />
-    <None Include="wwwroot\css\bootstrap\bootstrap.min.css.map" />
-    <None Include="wwwroot\css\open-iconic\FONT-LICENSE" />
-    <None Include="wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css" />
-    <None Include="wwwroot\css\open-iconic\font\fonts\open-iconic.eot" />
-    <None Include="wwwroot\css\open-iconic\font\fonts\open-iconic.otf" />
-    <None Include="wwwroot\css\open-iconic\font\fonts\open-iconic.svg" />
-    <None Include="wwwroot\css\open-iconic\font\fonts\open-iconic.ttf" />
-    <None Include="wwwroot\css\open-iconic\font\fonts\open-iconic.woff" />
-    <None Include="wwwroot\css\open-iconic\ICON-LICENSE" />
-    <None Include="wwwroot\css\open-iconic\README.md" />
-    <None Include="wwwroot\favicon.ico" />
-    <None Include="wwwroot\icon-192.png" />
-    <None Include="wwwroot\index.html" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.8" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\1-BuildingBlocks\Contracts\Contracts.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="Pages\Consumptions.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
-    <Content Update="Shared\MainLayout.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
-    <Content Update="Shared\NavMenu.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
-    <Content Update="wwwroot\appsettings.Development.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Update="wwwroot\appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Update="_Imports.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
   </ItemGroup>
 
 </Project>
