@@ -1,4 +1,53 @@
 ﻿@page "/consumptions"
-<h1>consumptions</h1>
+@using SmartEnergy.BuildingBlocks.Contracts.Dtos
+@using SmartEnergy.Clients.Dashboard.Services
+@inject ConsumptionApiService ConsumptionApiService
+
+<PageTitle>consumptions</PageTitle>
+
+<h1>Consumptions</h1>
 
 <p>This component demonstrates fetching consumptions data from the server.</p>
+
+@if (consumptions == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>time</th>
+                <th>meterusage</th>
+            </tr>
+        </thead>
+        <tbody id="consumption-table">
+            @foreach (var consumption in consumptions)
+            {
+                <tr>
+                    <td>@consumption.Time</td>
+                    <td>@consumption.MeterUsage</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button @onclick="GetConsumptionsAsync" class="btn btn-lg btn-success">Older Consumptions</button>
+}
+
+@code {
+    private int skip = 0;
+    private int take = 4;
+    private IEnumerable<GetConsumptionDto> consumptions;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetConsumptionsAsync();
+    }
+
+    private async Task GetConsumptionsAsync()
+    {
+        consumptions = await ConsumptionApiService.GetListAsync(skip, take);
+        skip += take;
+    }
+}
